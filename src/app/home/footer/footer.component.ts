@@ -14,7 +14,7 @@ import { AdminService } from '../../admin/admin.service'
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  location:any
+  location: any
 
   constructor(
     public mediaObserver: MediaObserver,
@@ -48,19 +48,19 @@ export class FooterComponent implements OnInit {
 
   watchpostion(): Promise<any> {
     return new Promise((reslove, reject) => {
-       window.navigator.geolocation.watchPosition(position => {
-        reslove({ latitude: position.coords.latitude, longitude: position.coords.longitude})
+      window.navigator.geolocation.watchPosition(position => {
+        reslove({ latitude: position.coords.latitude, longitude: position.coords.longitude })
       }, (err) => {
-          reject("error" + err)
+        reject("error" + err)
       }, {
         enableHighAccuracy: true,
         timeout: 5000,
         maximumAge: 0
       });
     });
-  
+
   }
-  
+
   getlocation() {
     this.watchpostion().then(resp => {
       this.adminService.getlocation(resp.latitude, resp.longitude).subscribe((data: any) => {
@@ -71,6 +71,39 @@ export class FooterComponent implements OnInit {
       console.log("error" + err)
     });
   }
+
+  // getAmount(country, quantity): any {
+  // var finalPrice;
+  // var isCountry;
+  // const calculatedQuantity = this.getQuantity(quantity); 
+  //   function isUSA() {
+  //     var amount = { 5: 560, 10: 525, 15: 460, 20: 445, 25: 440, 30: 430, 35: 420, 40: 415, 45: 410, 50: 405, 55: 400, 60: 395 };
+  //     return finalPrice = amount[calculatedQuantity]  * (calculatedQuantity+ 2)
+  //   }
+  //   function isUK() {
+  //     var amount = { 5: 560, 10: 525, 15: 460, 20: 445, 25: 440, 30: 430, 35: 420, 40: 415, 45: 410, 50: 405, 55: 400, 60: 395 };
+  //     return finalPrice = amount[calculatedQuantity] * (calculatedQuantity + 2)
+  //   }
+  //   var countries = {
+  //     'USA': isUSA(),
+  //     'UK': isUK(),
+  //   };
+  //   isCountry = countries[country];
+  //   console.log(finalPrice + " Final Price");
+  //   return finalPrice;
+
+  // }
+
+  // getQuantity(quantity:number) {
+  //   const calculatedQuantity  = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60].reduce((prev, curr) => Math.abs(curr - quantity) < Math.abs(prev - quantity) ? curr : prev);
+  //   console.log(calculatedQuantity + " KGS");
+  //   return calculatedQuantity;
+  // };
+
+
+
+
+
 
   getHeaderNames(indx: number) { return HeaderConstants[indx]; }
 
