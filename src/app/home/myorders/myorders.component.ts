@@ -198,7 +198,7 @@ printOrder(data) {
 
   getImage(imageId) {
     if (!imageId) return '';
-    return this.productService.productImageUrl(imageId);
+    return this.productService.productImageUrl(imageId[0].filename);
   }
 
   orderCancel(id) {

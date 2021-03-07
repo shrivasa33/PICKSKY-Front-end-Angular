@@ -43,7 +43,7 @@ secondFormGroup: FormGroup;
    }
    getImage(imageId) {
     if (!imageId) return '';
-    return this.productService.productImageUrl(imageId);
+     return this.productService.productImageUrl(imageId[0].filename);
   }
    get getTotal() {
      this.total =  this.cartService.getTotalPrice();

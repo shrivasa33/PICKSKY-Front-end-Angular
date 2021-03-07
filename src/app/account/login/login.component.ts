@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   countryCodeValidation =''
   fillAllValidation=''
 
-  constructor(
+  constructor(   
     private toastr: ToastrService,
     public mediaObserver: MediaObserver,
     private router: Router,
@@ -48,6 +48,7 @@ export class LoginComponent implements OnInit {
   backtoCheckOut =''
   @ViewChild('alert', { static: true }) alert: ElementRef;
   ngOnInit() {
+    window.scrollTo(0, 0);
      this.backtoCheckOut= localStorage.getItem('backtoCheckOut')
     this.mediaSub = this.mediaObserver.media$.subscribe((result: MediaChange) => {
       console.log(result.mqAlias)
@@ -136,7 +137,7 @@ export class LoginComponent implements OnInit {
           if (error.error.message == 'Account not verified') {
             this.toastr.error('Account not verified', 'Error')
         }else if(error.error.message == 'Auth Password failed') {
-          this.authPasswordError = 'show'
+            this.toastr.error('Auth Password failed', 'Error')
           this.accountNotVerfied = ''
 
         }else if(error.error.message == 'No Account Create Account First') {

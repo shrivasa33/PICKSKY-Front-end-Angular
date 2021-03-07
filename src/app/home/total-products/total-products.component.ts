@@ -322,7 +322,7 @@ export class TotalProductsComponent implements OnInit {
     if (!imageId) {
       return '';
     } else {
-      return this.productService.productImageUrl(imageId);
+      return this.productService.productImageUrl(imageId[0].filename);
     }
   }
 

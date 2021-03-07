@@ -60,13 +60,13 @@
       ">
       password must have at least 1 Capital letter!
       </div>
-    <div style="font-size: 14px" class="errorlbl"
+     <div style="font-size: 14px" class="errorlbl"
       *ngIf="rformSignup.controls['password'].hasError('hasSmallCase')">
       passowrd must have at least 1 Small letter!
-    </div>
-    <div class="errorlbl" style="font-size: 14px" *ngIf="rformSignup.controls['password'].hasError('hasDigit')">
+     </div>
+     <div class="errorlbl" style="font-size: 14px" *ngIf="rformSignup.controls['password'].hasError('hasDigit')">
       passowrd must have at least 1 number!
-    </div>
+     </div>
       </div>
       <div style="width: 40px">
         <button style="height: 35px" class="btn btn-default" (click)="passwordshow()" type="submit">
@@ -75,7 +75,7 @@
         </button>
       </div>
 
-    </div>
+     </div>
 
         <div style="
             padding-bottom: 2%;
@@ -114,7 +114,7 @@
       <p style="font-size: 14px" class="errorlbl"
       *ngIf="showEmailAlready == 'show'">
       Email Already exist
-    </p>
+     </p>
 
       </form>
 
@@ -128,7 +128,7 @@
         <button (click)="signUpGoogle('google')" class="col-5 btn btn-danger">
           SignUp With Google
         </button>
-    <div class="col-2"></div>
+     <div class="col-2"></div>
         <button (click)="signUpFacebook('facebook')" style="font-size: small;" class="col-5 btn btn-primary">
           SignUp With facebook
         </button>
@@ -148,7 +148,7 @@
 
       </div>
 
-    <div *ngIf="!deviceXs" class="col-lg-4 col-xs-12 col-sm-4 cardRight">
+     <div *ngIf="!deviceXs" class="col-lg-4 col-xs-12 col-sm-4 cardRight">
       <h3 class="btn">Hello Friend</h3>
       <h4 class="btn">Fill up the Form and</h4>
       <h4 class="btn">start Journey with us</h4>
@@ -158,8 +158,8 @@
           Login
         </button>
       </div>
-    </div>
-  </div>
-  <div class="col-lg-2 col-xs-1 col-sm-1"></div>
+     </div>
+   </div>
+   <div class="col-lg-2 col-xs-1 col-sm-1"></div>
 </div>
 

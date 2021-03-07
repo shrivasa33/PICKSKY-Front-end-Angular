@@ -11,8 +11,8 @@ export const HeaderConstants = {
 };
 
 export const PicklesConstants = {
-    1: "Non-vegetarian",
-    2: "vegetarian",
+    1: "vegetarian",
+    2: "Non-vegetarian",
     3: "With Gralic",
     4: "Without Gralic",
 
